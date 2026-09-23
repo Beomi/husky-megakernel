@@ -1,0 +1,63 @@
+device: Apple M4 Pro, maxBufferLength 28753 MB
+loading weights (+ fp16 GEMM weights)...
+== chunked prefill correctness ==
+profile gemm_mma    90.442 ms
+profile qmatvec_warp     1.385 ms
+profile gdelta_chunk_register     0.986 ms
+profile rmsnorm     0.651 ms
+profile add_inplace     0.338 ms
+profile copy_range_b     0.205 ms
+profile silu_mul     0.166 ms
+profile l2norm_scale     0.159 ms
+profile conv_chunk     0.117 ms
+profile rmsnorm_gated     0.097 ms
+profile g_beta_b     0.083 ms
+profile attention_chunk_simd     0.063 ms
+profile apply_rope_chunk     0.049 ms
+profile split_q_gate_b     0.029 ms
+profile write_kv_chunk     0.025 ms
+profile mul_sigmoid_gate     0.019 ms
+profile argmax_partial     0.007 ms
+profile embed_lookup_b     0.005 ms
+  chunk 256: next token 11751 OK
+DIAGNOSTIC MODE: serialized dispatches; TPS is not representative.
+
+== chunked prefill throughput (median of 1, optimized=true) ==
+chunk   len | prefill t/s | total ms | ms/token
+profile gemm_mma   319.392 ms
+profile gdelta_chunk_register    28.698 ms
+profile attention_chunk_simd    21.261 ms
+profile conv_chunk     1.948 ms
+profile rmsnorm     1.690 ms
+profile qmatvec_warp     1.400 ms
+profile l2norm_scale     1.229 ms
+profile rmsnorm_gated     1.211 ms
+profile copy_range_b     1.210 ms
+profile silu_mul     0.972 ms
+profile add_inplace     0.717 ms
+profile split_q_gate_b     0.270 ms
+profile mul_sigmoid_gate     0.115 ms
+profile write_kv_chunk     0.089 ms
+profile g_beta_b     0.087 ms
+profile apply_rope_chunk     0.086 ms
+profile embed_lookup_b     0.019 ms
+profile argmax_partial     0.007 ms
+profile gemm_mma   319.504 ms
+profile gdelta_chunk_register    28.374 ms
+profile attention_chunk_simd    21.781 ms
+profile conv_chunk     1.982 ms
+profile rmsnorm     1.461 ms
+profile qmatvec_warp     1.414 ms
+profile l2norm_scale     1.223 ms
+profile rmsnorm_gated     1.211 ms
+profile copy_range_b     1.208 ms
+profile silu_mul     1.041 ms
+profile add_inplace     0.917 ms
+profile split_q_gate_b     0.270 ms
+profile apply_rope_chunk     0.165 ms
+profile mul_sigmoid_gate     0.121 ms
+profile write_kv_chunk     0.090 ms
+profile g_beta_b     0.087 ms
+profile embed_lookup_b     0.017 ms
+profile argmax_partial     0.007 ms
+  256    256 |       543.4 |    471.1 |    1.840

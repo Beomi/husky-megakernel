@@ -1,0 +1,21 @@
+device: Apple M4 Pro, maxBufferLength 28753 MB
+loading weights (+ fp16 GEMM weights)...
+== chunked prefill correctness ==
+  chunk 64: next token 11751 OK
+  chunk 128: next token 11751 OK
+  chunk 256: next token 11751 OK
+
+== chunked prefill throughput ==
+chunk   len | prefill t/s | total ms | ms/token
+   64     64 |       474.9 |    134.8 |    2.106
+   64    128 |       472.0 |    271.2 |    2.119
+   64    256 |       450.2 |    568.6 |    2.221
+   64    512 |       413.9 |   1236.9 |    2.416
+  128     64 |       482.1 |    132.7 |    2.074
+  128    128 |       505.9 |    253.0 |    1.977
+  128    256 |       487.0 |    525.7 |    2.054
+  128    512 |       444.5 |   1151.9 |    2.250
+  256     64 |       483.4 |    132.4 |    2.069
+  256    128 |       509.2 |    251.4 |    1.964
+  256    256 |       494.4 |    517.8 |    2.023
+  256    512 |       450.4 |   1136.8 |    2.220

@@ -1,0 +1,44 @@
+device: Apple M4 Pro, maxBufferLength 28753 MB
+loading weights (+ fp16 GEMM weights)...
+== chunked prefill correctness ==
+profile gemm_mma    89.193 ms
+profile gdelta_chunk     2.401 ms
+profile qmatvec_warp     1.434 ms
+profile rmsnorm     0.756 ms
+profile copy_range_b     0.438 ms
+profile l2norm_scale     0.366 ms
+profile add_inplace     0.242 ms
+profile conv_chunk     0.173 ms
+profile rmsnorm_gated     0.099 ms
+profile attention_chunk     0.092 ms
+profile silu_mul     0.089 ms
+profile g_beta_b     0.082 ms
+profile apply_rope_chunk     0.049 ms
+profile split_q_gate_b     0.031 ms
+profile write_kv_chunk     0.025 ms
+profile mul_sigmoid_gate     0.019 ms
+profile argmax_partial     0.007 ms
+profile embed_lookup_b     0.005 ms
+  chunk 256: next token 11751 OK
+
+== chunked prefill throughput ==
+chunk   len | prefill t/s | total ms | ms/token
+profile gemm_mma   321.321 ms
+profile gdelta_chunk   117.304 ms
+profile attention_chunk    53.114 ms
+profile conv_chunk     2.008 ms
+profile rmsnorm     1.542 ms
+profile copy_range_b     1.432 ms
+profile qmatvec_warp     1.417 ms
+profile rmsnorm_gated     1.239 ms
+profile silu_mul     1.230 ms
+profile l2norm_scale     1.223 ms
+profile add_inplace     0.858 ms
+profile split_q_gate_b     0.531 ms
+profile mul_sigmoid_gate     0.120 ms
+profile g_beta_b     0.098 ms
+profile write_kv_chunk     0.089 ms
+profile apply_rope_chunk     0.088 ms
+profile embed_lookup_b     0.019 ms
+profile argmax_partial     0.007 ms
+  256    256 |       421.7 |    607.1 |    2.372

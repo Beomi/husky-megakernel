@@ -1,0 +1,7 @@
+device: Apple M4 Pro; threadgroup memory: 32768 bytes
+256 MiB copy, read+write: 215.8 GB/s (median of 6 warmed runs)
+MMA groups=1024: 0.625 ms, 3.44 TMAC/s = 6.88 TFLOP/s; max error 0.000000
+MMA groups=4096: 2.420 ms, 3.55 TMAC/s = 7.10 TFLOP/s; max error 0.000000
+MMA groups=8192: 4.828 ms, 3.56 TMAC/s = 7.12 TFLOP/s; max error 0.000000
+Measured compute-only projection bound (Woof, 3.569090560 GMAC/token): 997 tokens/s
+This excludes staging, recurrence, attention and output logits; it is not an end-to-end TPS guarantee.

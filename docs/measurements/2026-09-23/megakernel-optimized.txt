@@ -1,0 +1,2 @@
+device: Apple M4 Pro, maxBufferLength 28753 MB
+megakernel groups=1 threads=1024: 213.796 ms/token, 4.677 TPS (GPU median of 3 warmed 15-step runs); 12/12 golden tokens match

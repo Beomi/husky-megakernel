@@ -1,0 +1,21 @@
+device: Apple M4 Pro, maxBufferLength 28753 MB
+prefill logits length=1: relative RMSE 0.000000, max abs 0.000000
+length 1: argmax and decode handoff OK
+prefill logits length=5: relative RMSE 0.000000, max abs 0.000000
+length 5: argmax and decode handoff OK
+prefill logits length=63: relative RMSE 0.000000, max abs 0.000000
+length 63: argmax and decode handoff OK
+prefill logits length=64: relative RMSE 0.000000, max abs 0.000000
+length 64: argmax and decode handoff OK
+prefill logits length=65: relative RMSE 0.000000, max abs 0.000000
+length 65: argmax and decode handoff OK
+prefill logits length=129: relative RMSE 0.000000, max abs 0.000000
+length 129: argmax and decode handoff OK
+prefill logits length=257: relative RMSE 0.000000, max abs 0.000000
+length 257: argmax and decode handoff OK
+prefill logits length=256: relative RMSE 0.000000, max abs 0.000000
+length 256: argmax and decode handoff OK
+prefill logits length=512: relative RMSE 0.000000, max abs 0.000000
+length 512: argmax and decode handoff OK
+2+2= chunk=3, 12-token continuation: exact match
+Prefill integration checks passed.
